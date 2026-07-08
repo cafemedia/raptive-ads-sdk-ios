@@ -17,13 +17,8 @@ Select version `1.0.0`.
 ```swift
 import RaptiveAdsSDK
 
-RaptiveAds.shared.initialize(raptiveSiteId: "foo") { result in
-    switch result {
-    case .success:
-        // The SDK is ready to load configured ad placements.
-    case .failure(let error):
-        print("RaptiveAdsSDK failed to initialize: \(error.localizedDescription)")
-    }
+RaptiveAds.shared.initialize(raptiveSiteId: "your-site-id") { result in
+    // Continue application flow, due to the initialization result
 }
 ```
 
