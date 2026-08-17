@@ -10,7 +10,7 @@ Add the package URL in Xcode:
 https://github.com/cafemedia/raptive-ads-sdk-ios.git
 ```
 
-Select version `1.1.0`.
+Select version `1.2.0`.
 
 ## Usage
 
