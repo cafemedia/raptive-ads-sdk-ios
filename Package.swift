@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "RaptiveAdsSDK",
     platforms: [
-        .iOS(.v13)
+        .iOS(.v15)
     ],
     products: [
         .library(
@@ -25,19 +25,25 @@ let package = Package(
             dependencies: [
                 .target(name: "RaptiveAdsSDK"),
                 .target(name: "PrebidMobileOMSDK"),
+                .target(name: "ConfiantSDK"),
                 .product(name: "GoogleMobileAds", package: "swift-package-manager-google-mobile-ads")
             ],
             path: "Sources/RaptiveAdsSDKTarget"
         ),
         .binaryTarget(
             name: "RaptiveAdsSDK",
-            url: "https://raptive-maa-packages-development.s3.us-east-1.amazonaws.com/ios/releases/1.1.0/RaptiveAdsSDK-1.1.0.xcframework.zip",
-            checksum: "54b94ecf6fa9869d853e38c55b9b8073f858cfedbfbb3bfbd764c2abb2118172"
+            url: "https://raptive-maa-packages-development.s3.us-east-1.amazonaws.com/ios/releases/1.2.0/RaptiveAdsSDK-1.2.0.xcframework.zip",
+            checksum: "0aeafb4a647b0703b489bb2f1fcf9d51e70d8ae0f29b29188d76e83121af6674"
         ),
         .binaryTarget(
             name: "PrebidMobileOMSDK",
-            url: "https://raptive-maa-packages-development.s3.us-east-1.amazonaws.com/ios/releases/1.1.0/OMSDK_Prebidorg-1.1.0.xcframework.zip",
-            checksum: "13977c2abed964f0512ae99f9db29ea149ab90e92112f47159c9f83977deb76f"
+            url: "https://raptive-maa-packages-development.s3.us-east-1.amazonaws.com/ios/releases/1.2.0/OMSDK_Prebidorg-1.2.0.xcframework.zip",
+            checksum: "c1942d5f6c3ef600ef762f89cc26689c4e93ae51744c71a92a4f5056c1f32139"
+        ),
+        .binaryTarget(
+            name: "ConfiantSDK",
+            url: "https://raptive-maa-packages-development.s3.us-east-1.amazonaws.com/ios/releases/1.2.0/ConfiantSDK-1.2.0.xcframework.zip",
+            checksum: "918357b5454a9021d79c80a842a4c3bac67cb91c92d0ab45dcb0b5bfc39296ac"
         )
     ]
 )
