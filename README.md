@@ -10,7 +10,7 @@ Add the package URL in Xcode:
 https://github.com/cafemedia/raptive-ads-sdk-ios.git
 ```
 
-Select version `1.2.0`.
+Select version `1.2.1`.
 
 ## Usage
 
@@ -21,4 +21,3 @@ RaptiveAds.shared.initialize(raptiveSiteId: "your-site-id") { result in
     // Continue application flow, due to the initialization result
 }
 ```
-
