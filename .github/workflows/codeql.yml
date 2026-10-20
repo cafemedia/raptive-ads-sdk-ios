@@ -1,0 +1,45 @@
+name: CodeQL Advanced
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '35 0 * * 3'
+  workflow_dispatch:
+
+jobs:
+  analyze:
+    name: Analyze Swift
+    runs-on: macos-latest
+    permissions:
+      security-events: write
+      packages: read
+      actions: read
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v4
+        with:
+          languages: swift
+          build-mode: manual
+          queries: security-extended
+
+      - name: Build package for iOS Simulator
+        shell: bash
+        run: |
+          set -euo pipefail
+          IOS_SIMULATOR_SDK="$(xcrun --sdk iphonesimulator --show-sdk-path)"
+          swift build \
+            --triple arm64-apple-ios15.0-simulator \
+            --sdk "$IOS_SIMULATOR_SDK"
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v4
+        with:
+          category: /language:swift
