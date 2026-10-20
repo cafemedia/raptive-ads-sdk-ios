@@ -15,8 +15,8 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
-            .upToNextMinor(from: "13.3.0")
+            url: "https://github.com/amzn/swift-package-manager-amazon-aps.git",
+            exact: "5.6.6"
         )
     ],
     targets: [
@@ -26,24 +26,24 @@ let package = Package(
                 .target(name: "RaptiveAdsSDK"),
                 .target(name: "PrebidMobileOMSDK"),
                 .target(name: "ConfiantSDK"),
-                .product(name: "GoogleMobileAds", package: "swift-package-manager-google-mobile-ads")
+                .product(name: "AmazonPublisherServicesSDK", package: "swift-package-manager-amazon-aps")
             ],
             path: "Sources/RaptiveAdsSDKTarget"
         ),
         .binaryTarget(
             name: "RaptiveAdsSDK",
-            url: "https://raptive-maa-packages-development.s3.us-east-1.amazonaws.com/ios/releases/1.2.1/RaptiveAdsSDK-1.2.1.xcframework.zip",
-            checksum: "e9f7152a9e3e40cb09df53d94081fedf570ecde30fde3229730e96e12f609bca"
+            url: "https://raptive-maa-packages-development.s3.us-east-1.amazonaws.com/ios/releases/1.3.0/RaptiveAdsSDK-1.3.0.xcframework.zip",
+            checksum: "e164658ffd94149daaebd3c498878251f95d669a49078a63647a678eaa4e0e41"
         ),
         .binaryTarget(
             name: "PrebidMobileOMSDK",
-            url: "https://raptive-maa-packages-development.s3.us-east-1.amazonaws.com/ios/releases/1.2.1/OMSDK_Prebidorg-1.2.1.xcframework.zip",
-            checksum: "57a880b36949c633018bc1389f29498c4817a55f49be8bbb7f186dbbb3e8b84f"
+            url: "https://raptive-maa-packages-development.s3.us-east-1.amazonaws.com/ios/releases/1.3.0/OMSDK_Prebidorg-1.3.0.xcframework.zip",
+            checksum: "deea612bd3ede00804f34261accf7351c3224ff87368a814b13081498063e8df"
         ),
         .binaryTarget(
             name: "ConfiantSDK",
-            url: "https://raptive-maa-packages-development.s3.us-east-1.amazonaws.com/ios/releases/1.2.1/ConfiantSDK-1.2.1.xcframework.zip",
-            checksum: "a06234c8fe6ea3995bc69283c4227157cefcd5c3511f2a487b087fc1a4a8e9a1"
+            url: "https://raptive-maa-packages-development.s3.us-east-1.amazonaws.com/ios/vendor/confiant/6.2.0/ConfiantSDK-6.2.0.xcframework.zip",
+            checksum: "a9f6ed3d2d90e511586f0b30be4c26ae5645db327755da5b6128f4c14d38778d"
         )
     ]
 )
